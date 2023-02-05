@@ -23,3 +23,6 @@ def Transform_df(load_df):
 
 if __name__ == "__main__":
     load_df = extract.return_dataframe()
+    Data_quality(load_df)
+    Transformed_df = Transform_df(load_df)
+    print(Transformed_df)
