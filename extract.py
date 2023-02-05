@@ -1,4 +1,4 @@
-import pandas as pandas
+import pandas as pd
 import requests
 from datetime import datetime
 import datetime
@@ -24,6 +24,12 @@ def return_dataframe():
     artist_names = []
     played_at_list = []
     timestamps = []
+    try:
+        r_json = r.json()
+    except Exception:
+        return None
+    return r_json.get('id', None)
+
 
     # Extracting only the relevant bits of data from the json object      
     for song in data["items"]:
